@@ -1,0 +1,43 @@
+body {
+    background-color: darkgray;
+}
+
+nav {
+    width: 100%;
+    background-color: lightgrey;
+    height: 100px;
+    padding: 10px;
+}
+
+.grid {
+    padding: 20px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    justify-content: center;
+}
+
+.parent {
+    width: 400px;
+    height: 400px;
+}
+.parent.whiteSection {
+    background: white;
+    text-align: center;
+}
+.white-block {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    color: black;
+}
+.parent.blackSection {
+    background: black;
+    text-align: center;
+}
+.black-block {
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    color: white;
+}
