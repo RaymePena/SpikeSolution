@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csshake": "^1.5.3",
     "shake.js": "^1.2.2"
   }
 }

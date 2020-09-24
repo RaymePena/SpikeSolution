@@ -1,8 +1,15 @@
-// const shakeEvent = new shakeEvent({});
 const vm = new Vue({
 	el: '#app',
 	data: {
 		message: 'Color Swap',
-		darkMode: false
-	}
+		darkModeWhite: false,
+		darkModeBlack: false,
+		shakingBlack: false,
+		shakingOne: false,
+		shakingTwo: false,
+		shakeScreen: false,
+		count: 1
+	},
+
+	methods: {}
 });

@@ -14,43 +14,62 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<div class="container-fluid">
-			<nav class="text-center">
-				<h1>Spike Solution</h1>
-			</nav>
-		</div>
-		<div class="container text-center">
-			<div id="app">
+		<div id="app">
+			<div
+				class="container-fluid text-center"
+				v-bind:class="{shaking: shakeScreen}"
+			>
+				<div class="container-fluid">
+					<nav class="text-center row navbar">
+						<div class="col-6 text-center">
+							<img src="./img/icon.svg" alt="dice-image" class="mt-1" />
+						</div>
+						<div class="col-6">
+							<h1>Spike Solution</h1>
+						</div>
+					</nav>
+				</div>
 				<div class="grid v-cloak">
-					<div class="parent whiteSection">
-						<div v-bind:class="darkMode? 'black-block': 'white-block'">
+					<div v-bind:class="{shaking: shakingOne}" class="parent whiteSection">
+						<div v-bind:class="{'black-block': darkModeWhite}">
 							<button
 								class="btn btn-warning mt-5"
-								@click="darkMode =! darkMode"
+								@click="darkModeWhite = !darkModeWhite"
 							>
-								<i class="fa fa-adjust fa-4x" aria-hidden="true"></i>
+								<i class="fa fa-adjust fa-4x" aria-hidden="true">Swap</i>
 							</button>
 							<p class="display-3">{{message}}</p>
+							<p class="display-3">{{count}}</p>
 						</div>
 					</div>
-					<div class="parent blackSection">
-						<div v-bind:class="darkMode? 'white-block': 'black-block'">
+					<div v-bind:class="{shaking: shakingTwo}" class="parent blackSection">
+						<div v-bind:class="{'white-block': darkModeBlack}">
 							<button
 								class="btn btn-warning mt-5"
-								@click="darkMode = !darkMode"
+								@click="darkModeBlack = !darkModeBlack"
 							>
-								<i class="fa fa-adjust fa-4x" aria-hidden="true"></i>
+								<i class="fa fa-adjust fa-4x" aria-hidden="true">Swap</i>
 							</button>
 							<p class="display-3">{{message}}</p>
+							<p class="display-3">{{count+1}}</p>
 						</div>
 					</div>
 				</div>
 				<div class="container">
 					<div class="row text-center">
 						<div class="col-12">
-							<button class="btn btn-warning">Shake Dark</button>
-							<button class="btn btn-warning">Shake Light</button>
-							<button class="btn btn-warning">Shake Screen</button>
+							<button class="btn btn-warning" @click="shakingOne =! shakingOne">
+								Shake One
+							</button>
+							<button class="btn btn-warning" @click="shakingTwo =! shakingTwo">
+								Shake Two
+							</button>
+							<button
+								class="btn btn-warning"
+								v-on:click="shakeScreen =! shakeScreen"
+							>
+								Shake Screen
+							</button>
 						</div>
 					</div>
 				</div>
@@ -63,7 +82,7 @@
 			src="https://kit.fontawesome.com/e5d2171ca1.js"
 			crossorigin="anonymous"
 		></script>
-		<script src="./node_modules/shake.js/shake.js"></script>
+
 		<script src="./main.js"></script>
 	</body>
 </html>
